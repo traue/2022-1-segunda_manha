@@ -11,6 +11,8 @@ public class Pessoa {
     // 1 - Private neles
     // 2 - Implementar o Set para cada atributo
     // 3 - Implementar o Get para cada atributo
+    
+    //Onde paramos: repassar novamente os sets e gets e criar o construtor
     public String getNome() {
         return nome;
     }
