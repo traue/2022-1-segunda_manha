@@ -3,16 +3,27 @@ package br.uninove.poo;
 public class Pessoa {
 
     //Atributos (características) - Variáveis
-    private String nome, email, cpf;
+    private String nome;
+    private String email;
+    private String cpf;
     private int idade;
+    private boolean fumante;
 
-    //Encapsulamento dos atributos (sets e gets):
-    //Três "passos" para encapsular os campos:
-    // 1 - Private neles
-    // 2 - Implementar o Set para cada atributo
-    // 3 - Implementar o Get para cada atributo
-    
-    //Onde paramos: repassar novamente os sets e gets e criar o construtor
+    public Pessoa() {
+        nome = "";
+        email = "";
+        cpf = "";
+        idade = 0;
+    }
+
+    public Pessoa(String nome, String email, String cpf, int idade, boolean fumante) {
+        setNome(nome);
+        setEmail(email);
+        setIdade(idade);
+        setCpf(cpf);
+        setFumante(fumante);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -45,8 +56,16 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    public boolean isFumante() {
+        return fumante;
+    }
+
+    public void setFumante(boolean fumante) {
+        this.fumante = fumante;
+    }
+
     //Métodos (comportamentos)
-    /*  este é um método que não retornar nada
+    /*  este é um método que não retorna nada
         e não possui nenhum parâmetro de entrada */
     void fazerAniversario() {
         //idade = idade + 1; é o mesmo que..:
