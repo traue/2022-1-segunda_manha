@@ -1,7 +1,7 @@
 package br.uninove.poo;
 
 
-                                  //é
+                    //é
 public class Aluno extends Pessoa {
     private long ra;
     private String curso;
