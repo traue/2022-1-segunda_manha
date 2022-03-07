@@ -27,4 +27,5 @@ A média desta disciplina é calculada simplesmente pela média das atividades.
 ## Dicas legais
 
 - Cursos gratuitos: [https://web.dio.me/sign-in](https://web.dio.me/sign-in) (dica do Rômulo)
-- Senai - Cursos (muitos gratuitos): [https://cursosgratuitos.sp.senai.br/](https://cursosgratuitos.sp.senai.br/) (Dics do Rômulo)
+- Senai - Cursos (muitos gratuitos): [https://cursosgratuitos.sp.senai.br/](https://cursosgratuitos.sp.senai.br/) (Dica do Rômulo)
+- Cursos: [https://www.rocketseat.com.br/discover](https://www.rocketseat.com.br/discover) (Dica do Rômulo)
