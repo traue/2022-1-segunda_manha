@@ -9,7 +9,7 @@
     
     if(a < 0) {
         erro = true;
-        msgErro = "o valor \"a\" não pode ser menor do que ZERO!";
+        msgErro = "O valor \"a\" não pode ser menor do que ZERO!";
     }
     
     
