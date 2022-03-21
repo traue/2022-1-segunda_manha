@@ -29,6 +29,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bhaskara - Resultado</title>
+        <style>
+            .resultados {
+                margin-left: 30px;
+                margin-top: 30px;
+                font-size: 24px;
+            }
+        </style>
     </head>
     <body>
         <h1>Bhaskara - Resultados</h1>
