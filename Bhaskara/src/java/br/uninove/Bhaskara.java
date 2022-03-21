@@ -1,20 +1,67 @@
 package br.uninove;
 
 public class Bhaskara {
+    
+    private int a;
+    private int b;
+    private int c;
+    private double delta;
+    private double raizPos;
+    private double raizNeg;
 
-    public static double calculaDelta(int a, int b, int c) {
-        float delta = (b * b) - 4 * a * c;
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    public int getC() {
+        return c;
+    }
+
+    public void setC(int c) {
+        this.c = c;
+    }
+
+    public double getDelta() {
         return delta;
     }
 
-    public static double calculaRaizPositiva(int a, int b, double delta) {
-        double xP = (-b + Math.sqrt(delta)) / (2 * a);
-        return xP;
+    public void setDelta(double delta) {
+        this.delta = delta;
     }
 
-    public static double calculaRaizNegativa(int a, int b, double delta) {
-        double xN = (-b - Math.sqrt(delta)) / (2 * a);
-        return xN;
+    public double getRaizPos() {
+        return raizPos;
     }
 
+    public void setRaizPos(double raizPos) {
+        this.raizPos = raizPos;
+    }
+
+    public double getRaizNeg() {
+        return raizNeg;
+    }
+
+    public void setRaizNeg(double raizNeg) {
+        this.raizNeg = raizNeg;
+    }
+    
+    public void calculaBhaskara() {
+        setDelta((getB() * getB()) - 4 * getA() * getC());
+        if(delta > 0) {
+            setRaizPos((-getB() + Math.sqrt(getDelta())) / (2 * getA()));
+            setRaizNeg((-getB() - Math.sqrt(getDelta())) / (2 * getA()));
+        }
+    }
 }
