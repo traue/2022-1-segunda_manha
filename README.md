@@ -33,3 +33,4 @@ A média desta disciplina é calculada simplesmente pela média das atividades.
 - Cursos gratuitos: [https://web.dio.me/sign-in](https://web.dio.me/sign-in) (dica do Rômulo)
 - Senai - Cursos (muitos gratuitos): [https://cursosgratuitos.sp.senai.br/](https://cursosgratuitos.sp.senai.br/) (Dica do Rômulo)
 - Cursos: [https://www.rocketseat.com.br/discover](https://www.rocketseat.com.br/discover) (Dica do Rômulo)
+- Curso JSP essencial: [LINK](https://www.cursou.com.br/informatica/programacao/java/jsp-essencial-java-ee/)
