@@ -18,7 +18,7 @@ Para acessar as atividades, clique no link do Classroom acima e no menu "Ativida
 
 COnseguir acessar a atividade faz parte do critério de avaliação da disciplina.
 
-- Atividade 1: DE 28.03 até 11.04, 09h - Liberada
+- Atividade 1: De 28.03 até 11.04, 09h - Liberada
 
 ## Critérios de Avaliação
 
