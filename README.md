@@ -14,11 +14,15 @@ Para preparar o ambiente de desenvolvimento, você pode seguir o documento [NEST
 
 ## Atividades
 
-Todas as atividades dessa disciplina serão postadas e gerenciadas através do Google Classroom.
+Para acessar as atividades, clique no link do Classroom acima e no menu "Atividade". É preciso utilizar o e-mail institucional para todos os acessos.
+
+COnseguir acessar a atividade faz parte do critério de avaliação da disciplina.
+
+- Atividade 1: DE 28.03 até 11.04, 09h - Liberada
 
 ## Critérios de Avaliação
 
-Este professor não utiliza nenhuma prova para realizar a avaliação da turma, apenas atividades disponibilizadas durante o semestre. 
+Este professor não utiliza nenhuma prova para realizar a avaliação da turma, apenas atividades disponibilizadas durante o semestre.
 
 Teremos entre 4 e 6 atividades, todas de múltipla escolha e com prazo de ao menos 15 dias para realização.
 
