@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulário de Cookies</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/estilo.css">
+    </head>
+    <body>
+        <h1>Formulário para cadastro de dados em cookies</h1>
+        <hr>
+        <div class="corpo">
+            <form method="post" action="gerador_cookies.jsp">
+                <div class="item-formulario">
+                    <label>Informe seu nome: </label>
+                    <input type="text" name="nome" required>
+                </div>
+                <div class="item-formulario">  
+                    <label>Informe sua idade: </label>
+                    <input type="number" name="idade" required>
+                </div>
+                <div class="item-formulario">
+                    <button type="submit">Gravar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

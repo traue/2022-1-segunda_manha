@@ -1,0 +1,23 @@
+.corpo {
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+.corpo a {
+    font-size: 20px;
+}
+
+.corpo ul {
+    font-size: 24px;
+    list-style-type: square;
+}
+
+.item-formulario {
+    margin-top: 30px;
+}
+
+.item-formulario button {
+    width: 250px;
+    height: 30px;
+    background-color: lightblue;
+}
