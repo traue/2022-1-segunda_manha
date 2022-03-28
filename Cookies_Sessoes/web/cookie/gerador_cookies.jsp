@@ -13,6 +13,7 @@
     response.addCookie(cookieNome);
     response.addCookie(cookieIdade);
     
+    //paramos aqui... falta "brincar" com o maxAge
 %>
 <!DOCTYPE html>
 <html>
