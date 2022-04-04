@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulário da Sessão</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/estilo.css">
+    </head>
+    <body>
+        <h1>Formulário para cadastro de dados na Sessão</h1>
+        <hr>
+        <div class="corpo">
+            <form method="post" action="gerador_sessao.jsp">
+                <div class="item-formulario">
+                    <label>Informe seu nome: </label>
+                    <input type="text" name="nome" required>
+                </div>
+                <div class="item-formulario">  
+                    <label>Informe sua idade: </label>
+                    <input type="number" name="idade" required>
+                </div>
+                <div class="item-formulario">
+                    <button type="submit">Guardar</button>
+                    <br>
+                    <button type="reset">Limpar formulário</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

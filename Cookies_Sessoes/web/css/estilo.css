@@ -16,8 +16,15 @@
     margin-top: 30px;
 }
 
-.item-formulario button {
+.item-formulario button[type=submit] {
     width: 250px;
     height: 30px;
     background-color: lightblue;
+}
+
+.item-formulario button[type=reset] {
+    width: 250px;
+    height: 30px;
+    background-color: pink;
+    margin-top: 10px;
 }
