@@ -16,9 +16,10 @@ Para preparar o ambiente de desenvolvimento, você pode seguir o documento [NEST
 
 Para acessar as atividades, clique no link do Classroom acima e no menu "Atividade". É preciso utilizar o e-mail institucional para todos os acessos.
 
-COnseguir acessar a atividade faz parte do critério de avaliação da disciplina.
+Conseguir acessar a atividade faz parte do critério de avaliação da disciplina.
 
-- **Atividade 1:** De 28.03 até 11.04, 09h - Liberada
+- **Atividade 1:** De 28.03 até 11.04, 09h - Encerrada
+- **Atividade 2:** De 11.04 até 09.05, 09h - Aberta
 
 ## Critérios de Avaliação
 
