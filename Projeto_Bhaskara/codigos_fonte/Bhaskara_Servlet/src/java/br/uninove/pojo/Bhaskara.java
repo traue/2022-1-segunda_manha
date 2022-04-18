@@ -1,7 +1,7 @@
 package br.uninove.pojo;
 
 public class Bhaskara {
-    
+
     private int a;
     private int b;
     private int c;
@@ -56,10 +56,14 @@ public class Bhaskara {
     public void setRaizNeg(double raizNeg) {
         this.raizNeg = raizNeg;
     }
-    
-    public void calculaBhaskara() {
+
+    public double calculaDelta() {
         setDelta((getB() * getB()) - 4 * getA() * getC());
-        if(delta > 0) {
+        return getDelta();
+    }
+
+    public void calculaBhaskara() {
+        if (delta > 0) {
             setRaizPos((-getB() + Math.sqrt(getDelta())) / (2 * getA()));
             setRaizNeg((-getB() - Math.sqrt(getDelta())) / (2 * getA()));
         }
