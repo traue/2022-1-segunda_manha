@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"br.uninove.pojo","l":"Bhaskara"},{"p":"br.uninove.controllers","l":"BhaskaraController"}];updateSearchResults();

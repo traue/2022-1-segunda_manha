@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bhaskara</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input[type="number"] {
+                width:55px;
+                font-size: 20px;
+            }
+
+            label {
+                font-size: 24px;
+            }
+
+            input[type="submit"] {
+                width: 120px;
+                height: 64px;
+                font-size: 20px;
+            }
+            
+            .corpo {
+                margin-left: 100px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bhaskara</h1>
+        <hr>
+        <div class="corpo">
+            <p><b>Insira uma equação quadrádica no formato: </b>ax² + bx + c = 0</p>
+            <br>
+            <form method="post" action="bhaskara.jsp">
+                <input type="number" name="valorA" placeholder="a">
+                <label>x² + </label>
+
+                <input type="number" name="valorB" placeholder="b">
+                <label>x + </label>
+
+                <input type="number" name="valorC" placeholder="c" >
+                <label> = 0 </label>
+
+                <br>
+                <br>
+
+                <input type="submit" value="Calcular">
+            </form>
+        </div>
+    </body>
+</html>
