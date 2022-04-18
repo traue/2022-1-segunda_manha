@@ -20,6 +20,7 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 
 - **Atividade 1:** De 28.03 até 11.04, 09h - Encerrada
 - **Atividade 2:** De 11.04 até 09.05, 09h - Aberta
+- **Atividade 3:** De 18.04 até 09.05, 09h - Aberta
 
 ## Critérios de Avaliação
 
