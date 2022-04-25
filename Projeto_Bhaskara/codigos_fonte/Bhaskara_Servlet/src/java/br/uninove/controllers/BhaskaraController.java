@@ -28,6 +28,7 @@ public class BhaskaraController extends HttpServlet {
             int b = Integer.parseInt(request.getParameter("valorB"));
             int c = Integer.parseInt(request.getParameter("valorC"));
             double delta, rP, rN;
+            String params;
             
             Bhaskara bhaskara = new Bhaskara();
             
@@ -35,14 +36,25 @@ public class BhaskaraController extends HttpServlet {
             bhaskara.setB(b);
             bhaskara.setC(c);
             
+            params = String.format("a=%s&b=%s&c=%s", a, b, c);
+            
+            delta = bhaskara.calculaDelta();
             bhaskara.calculaBhaskara();
             
-            delta = bhaskara.getDelta();
-           
             if (delta > 0) {
                 rP = bhaskara.getRaizPos();
                 rN = bhaskara.getRaizNeg();
+                params += String.format("&delta=%s&rP=%s&rN=%s", 
+                    delta, rP, rN);
+            } else {
+                params += String.format("&delta=%s", delta);
             }
+            
+            //agora só falta enviar os resultados de volta para um "front"
+            //uma das formas mais simples de fazer é via parâmetros na URL...
+            //assim...
+            response.sendRedirect("resultado.jsp?" + params);
+            
         }
     }
 

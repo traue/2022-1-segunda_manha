@@ -4,33 +4,7 @@
         <title>Bhaskara</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-family: fantasy;
-                font-size: 24px;
-                background-color: rgb(34,39,45);
-                color: white;
-            }
-            
-            .corpo {
-                padding-top: 30px;
-                padding-left: 30px;
-            }
-            
-            input[type="number"] {
-                font-size: 24px;
-                width: 60px;
-            }
-            
-            input[type="submit"] {
-                display: block;
-                font-size: 24px;
-                width: 250px;
-                margin-top: 30px;
-                background-color: rgb(45,51,59);
-                color: white;
-            }
-        </style>
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
         <h1>Método de Bhaskara</h1>
@@ -38,7 +12,7 @@
         <div class="corpo">
             <h3>Insira uma equação quadrática no formato ax² + bx + c = 0</h3>
             <form method="post" action="BhaskaraController">
-                <input type="number" name="valorA" placeholder="a" required>
+                <input type="number" name="valorA" min="1" placeholder="a" required>
                 <label>X² + </label>
                 
                 <input type="number" name="valorB" placeholder="b" required>
