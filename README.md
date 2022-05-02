@@ -27,9 +27,11 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 
 Este professor não utiliza nenhuma prova para realizar a avaliação da turma, apenas atividades disponibilizadas durante o semestre.
 
-Teremos entre 4 e 6 atividades, todas de múltipla escolha e com prazo de ao menos 15 dias para realização.
+Teremos entre 4 e 6 atividades de tempo longo, todas de múltipla escolha e com prazo de **ao menos** 15 dias para realização.
 
-A média desta disciplina é calculada simplesmente pela média das atividades.
+Também serão aplicadas atividades durantes as aulas.
+
+A média desta disciplina é calculada simplesmente pela média de todas as atividades.
 
 ## Dicas legais
 
