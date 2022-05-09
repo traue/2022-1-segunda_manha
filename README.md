@@ -19,7 +19,7 @@ Para acessar as atividades, clique no link do Classroom acima e no menu "Ativida
 Conseguir acessar a atividade faz parte do critério de avaliação da disciplina.
 
 - **Atividade 1:** De 28.03 até 11.04, 09h - Encerrada
-- **Atividade 2:** De 11.04 até 09.05, 09h - Aberta
+- **Atividade 2:** De 11.04 até 09.05, 09h - Encerrada
 - **Atividade 3:** De 18.04 até 16.05, 09h - Aberta
 - **Atividade 4:** De 02.05 até 23.05, 09h - Aberta
 
