@@ -11,7 +11,7 @@ public class ConnectionFactory {
     private static final String pass = "root";
     
     public static Connection getConnection() throws SQLException{
-        //DriverManager.registerDriver();
+        DriverManager.registerDriver(new org.apache.derby.jdbc.ClientDriver());
         return DriverManager.getConnection(urlDB, user, pass);
     }
 }

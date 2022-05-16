@@ -1,12 +1,12 @@
 package br.sisacademico.controllers;
 
-import br.sisacademico.dao.AlunoDao;
-import br.sisacademico.model.Aluno;
+import br.sisacademico.dao.CursoDao;
+import br.sisacademico.model.Curso;
 import br.sisacademico.util.AcaoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -15,37 +15,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class AlunoController extends HttpServlet {
+
+public class CursoController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-
         try ( PrintWriter out = response.getWriter()) {
             AcaoDao act = AcaoDao.valueOf(request.getParameter("acao"));
-            AlunoDao aDAO = new AlunoDao();
+            CursoDao cDAO = new CursoDao();
             
-            switch(act) {
+            switch (act) {
                 case LEITURA:
-                    ArrayList<Aluno> alunos; 
-                    String url = "./relatorios/alunos.jsp";
-                    if(request.getParameter("idCurso") == null) {
-                        alunos =  aDAO.getTodosAluno();
-                    } else {
-                        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
-                        alunos = aDAO.getTodosAluno(idCurso);
-                        url += "?idCurso=" + idCurso;
-                    }
-                    
+                    Map<Curso, Integer> relatorio = cDAO.getTodosCursosCountAlunos();
                     HttpSession session = request.getSession();
-                    session.setAttribute("listaDeAlunos", alunos);
-                    
-                    response.sendRedirect(url);
-                    
+                    session.setAttribute("listaDeCursos", relatorio);
+                    response.sendRedirect("./relatorios/cursos.jsp");
                     break;
                 default:
                     break;
             }
+            
         }
     }
 
@@ -64,7 +54,7 @@ public class AlunoController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(AlunoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CursoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -82,7 +72,7 @@ public class AlunoController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(AlunoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CursoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

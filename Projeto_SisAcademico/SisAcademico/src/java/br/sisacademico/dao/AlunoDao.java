@@ -11,7 +11,7 @@ public class AlunoDao {
 
     private static Statement stm = null;
 
-    public ArrayList<Aluno> getTodosAluno() throws SQLException {
+    public ArrayList<Aluno> getTodosAluno(Integer... idCurso) throws SQLException {
         ArrayList<Aluno> alunos = new ArrayList<>();
 
         String query = "SELECT "
@@ -26,6 +26,10 @@ public class AlunoDao {
                 + "    INNER JOIN TB_CURSO AS curso"
                 + "    ON aluno.ID_CURSO = curso.ID_CURSO";
 
+        if(idCurso.length != 0) {
+            query += " WHERE curso.ID_CURSO = " + idCurso[0];
+        }
+        
         query += " ORDER BY aluno.NOME";
 
         stm = ConnectionFactory.getConnection().createStatement(
@@ -44,7 +48,7 @@ public class AlunoDao {
 
             c.setIdCurso(resultados.getInt("ID_CURSO"));
             c.setNomeCurso(resultados.getString("NOME_CURSO"));
-            c.setNomeCurso(resultados.getString("TIPO_CURSO"));
+            c.setTipoCurso(resultados.getString("TIPO_CURSO"));
 
             a.setCurso(c);
 

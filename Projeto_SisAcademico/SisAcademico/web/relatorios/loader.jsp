@@ -14,8 +14,12 @@
                 
                 if(pagina == 'aluno') {
                     var url = '../AlunoController?acao=LEITURA';
+                    const idCurso = urlParams.get('idCurso');
+                    if(idCurso != null) {
+                        url += '&idCurso=' + idCurso;
+                    }
                 } else {
-                    
+                    var url = '../CursoController?acao=LEITURA';
                 }
                 
                 $(location).attr('href', url);
