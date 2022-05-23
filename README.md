@@ -24,6 +24,8 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 - **Atividade 4:** De 02.05 até 23.05, 09h - Encerrada
 - **Atividade 5:** De 16.05 até 06.06, 09h - Aberta
 
+**Atividade de recuperação:** Será online no dia 13.06
+
 ## Critérios de Avaliação
 
 Este professor não utiliza nenhuma prova para realizar a avaliação da turma, apenas atividades disponibilizadas durante o semestre.
