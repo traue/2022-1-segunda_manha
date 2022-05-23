@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 public class CursoController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +23,7 @@ public class CursoController extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             AcaoDao act = AcaoDao.valueOf(request.getParameter("acao"));
             CursoDao cDAO = new CursoDao();
-            
+
             switch (act) {
                 case LEITURA:
                     Map<Curso, Integer> relatorio = cDAO.getTodosCursosCountAlunos();
@@ -34,17 +33,26 @@ public class CursoController extends HttpServlet {
                     break;
                 case EXCLUSAO:
                     int idCurso = Integer.parseInt(request.getParameter("idCurso"));
-                    
-                    if(cDAO.deleteCurso(idCurso)){
+
+                    if (cDAO.deleteCurso(idCurso)) {
                         response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
                     } else {
                         //precisamos pensar...
                     }
                     break;
+                case CADASTRO:
+                    String nomeCurso = request.getParameter("nomeCurso");
+                    String tipoCurso = request.getParameter("tipoCurso");
+                    if (cDAO.cadastraCurso(new Curso(0, nomeCurso, tipoCurso))) {
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
+                    }
+                    break;
+                    
+                    //paramos aqui: falta arrumar o utf-8
                 default:
                     break;
             }
-            
+
         }
     }
 

@@ -64,4 +64,24 @@ public class CursoDao {
         }
     }
 
+    public boolean cadastraCurso(Curso curso) {
+        try {
+            String query = 
+                    "INSERT INTO TB_CURSO(NOME_CURSO, TIPO_CURSO) VALUES(?,?)";
+
+            PreparedStatement stm = ConnectionFactory.getConnection()
+                    .prepareStatement(query);
+
+            stm.setString(1, curso.getNomeCurso());
+            stm.setString(2, curso.getTipoCurso());
+
+            stm.execute();
+
+            stm.getConnection().close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
 }
