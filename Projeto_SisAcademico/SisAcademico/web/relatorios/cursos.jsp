@@ -11,7 +11,7 @@
     </head>
     <body>
         <jsp:include page="../menu.jsp"></jsp:include>
-
+            <script src="../js/modal_esclusao.js"></script>
             <script>
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip();
@@ -62,7 +62,7 @@
                             </td>
                             <% } else {%>
                             <td class="text-center">
-                                <a class="btn btn-outline-danger" href="#">Excluir</a>
+                                <a class="btn btn-outline-danger" id="deleteCurso" href="../CursoController?acao=EXCLUSAO&idCurso=<%=c.getKey().getIdCurso()%>">Excluir</a>
                             </td>
                             <% } %>
                         </tr>

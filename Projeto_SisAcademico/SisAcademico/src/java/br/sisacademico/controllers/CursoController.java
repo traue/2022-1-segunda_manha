@@ -32,6 +32,15 @@ public class CursoController extends HttpServlet {
                     session.setAttribute("listaDeCursos", relatorio);
                     response.sendRedirect("./relatorios/cursos.jsp");
                     break;
+                case EXCLUSAO:
+                    int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+                    
+                    if(cDAO.deleteCurso(idCurso)){
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
+                    } else {
+                        //precisamos pensar...
+                    }
+                    break;
                 default:
                     break;
             }

@@ -43,6 +43,17 @@ public class AlunoController extends HttpServlet {
                     response.sendRedirect(url);
                     
                     break;
+                case EXCLUSAO:
+                    int idAluno = Integer.parseInt(request.getParameter("idAluno"));
+                    aDAO.deleteAluno(idAluno);
+                    if(request.getParameter("idCurso") != null) {
+                        int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=aluno&idCurso=" + idCurso);
+                    } else {
+                       response.sendRedirect("./relatorios/loader.jsp?pagina=aluno"); 
+                    }
+                    
+                    break;
                 default:
                     break;
             }
