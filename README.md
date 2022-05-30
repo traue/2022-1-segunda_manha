@@ -25,7 +25,7 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 - **Atividade 5:** De 16.05 até 06.06, 09h - Aberta
 - **Atividade 6:** De 30.06 até 13.06, 09h - Aberta
 
-**Atividade de recuperação:** Será online no dia 13.06
+**Atividade de recuperação:** Será online no dia 13.06 - Já começe a implementar sozinho(a) um projeto CRUD completo de "Urna Eletrônica"
 
 ## Critérios de Avaliação
 
