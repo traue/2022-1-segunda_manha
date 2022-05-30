@@ -40,7 +40,7 @@
                                 Cadastros
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Alunos</a></li>
+                                <li><a class="dropdown-item" href="<%=request.getContextPath()%>/AlunoController?acao=CARREGAMENTO">Alunos</a></li>
                                 <li><a class="dropdown-item" href="<%=request.getContextPath()%>/cadastros/curso.jsp">Cursos</a></li>
                             </ul>
                         </li>

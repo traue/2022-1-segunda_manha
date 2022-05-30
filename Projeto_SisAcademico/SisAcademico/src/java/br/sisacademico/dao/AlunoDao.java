@@ -27,10 +27,10 @@ public class AlunoDao {
                 + "    INNER JOIN TB_CURSO AS curso"
                 + "    ON aluno.ID_CURSO = curso.ID_CURSO";
 
-        if(idCurso.length != 0) {
+        if (idCurso.length != 0) {
             query += " WHERE curso.ID_CURSO = " + idCurso[0];
         }
-        
+
         query += " ORDER BY aluno.NOME";
 
         stm = ConnectionFactory.getConnection().createStatement(
@@ -60,7 +60,7 @@ public class AlunoDao {
 
         return alunos;
     }
-    
+
     public boolean deleteAluno(int idAluno) {
         try {
             String query = "DELETE FROM TB_ALUNO WHERE ID = ?";
@@ -70,7 +70,28 @@ public class AlunoDao {
             stm.execute();
             stm.getConnection().close();
             return true;
-        } catch(Exception ex) {
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    public boolean cadastraAluno(Aluno aluno) {
+        try {
+            String query
+                    = "INSERT INTO TB_ALUNO(RA, NOME, ID_CURSO) VALUES(?,?,?)";
+
+            PreparedStatement stm = ConnectionFactory.getConnection()
+                    .prepareStatement(query);
+
+            stm.setInt(1, aluno.getRa());
+            stm.setString(2, aluno.getNomeAluno());
+            stm.setInt(3, aluno.getCurso().getIdCurso());
+
+            stm.execute();
+
+            stm.getConnection().close();
+            return true;
+        } catch (Exception ex) {
             return false;
         }
     }

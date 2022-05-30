@@ -2,6 +2,9 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    response.setContentType("text/html;charset=UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    
     ArrayList<Aluno> alunos = (ArrayList) session.getAttribute("listaDeAlunos");
 
     boolean listaVazia = alunos.size() == 0;

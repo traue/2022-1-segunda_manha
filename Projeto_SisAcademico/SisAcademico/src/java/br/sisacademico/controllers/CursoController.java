@@ -20,19 +20,23 @@ public class CursoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             AcaoDao act = AcaoDao.valueOf(request.getParameter("acao"));
             CursoDao cDAO = new CursoDao();
+            int idCurso = -1;
+            String nomeCurso = "";
+            String tipoCurso = "";
+            HttpSession session = request.getSession();
 
             switch (act) {
                 case LEITURA:
                     Map<Curso, Integer> relatorio = cDAO.getTodosCursosCountAlunos();
-                    HttpSession session = request.getSession();
                     session.setAttribute("listaDeCursos", relatorio);
                     response.sendRedirect("./relatorios/cursos.jsp");
                     break;
                 case EXCLUSAO:
-                    int idCurso = Integer.parseInt(request.getParameter("idCurso"));
+                    idCurso = Integer.parseInt(request.getParameter("idCurso"));
 
                     if (cDAO.deleteCurso(idCurso)) {
                         response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
@@ -41,14 +45,27 @@ public class CursoController extends HttpServlet {
                     }
                     break;
                 case CADASTRO:
-                    String nomeCurso = request.getParameter("nomeCurso");
-                    String tipoCurso = request.getParameter("tipoCurso");
+                    nomeCurso = request.getParameter("nomeCurso");
+                    tipoCurso = request.getParameter("tipoCurso");
                     if (cDAO.cadastraCurso(new Curso(0, nomeCurso, tipoCurso))) {
                         response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
                     }
                     break;
-                    
-                    //paramos aqui: falta arrumar o utf-8
+                case EDICAO:
+                    nomeCurso = request.getParameter("nomeCurso");
+                    tipoCurso = request.getParameter("tipoCurso");
+                    idCurso = Integer.parseInt(request.getParameter("idCurso"));
+
+                    if (cDAO.atualizaCurso(idCurso, nomeCurso, tipoCurso)) {
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
+                    }
+
+                    //Outra forma de chamar a atualização
+                    //Curso curso = new Curso(idCurso, nomeCurso, tipoCurso);
+                    //if(cDAO.atualizaCurso(curso)) {
+                    //  response.sendRedirect("./relatorios/loader.jsp?pagina=curso");
+                    //}
+                    break;
                 default:
                     break;
             }

@@ -1,7 +1,9 @@
 package br.sisacademico.controllers;
 
 import br.sisacademico.dao.AlunoDao;
+import br.sisacademico.dao.CursoDao;
 import br.sisacademico.model.Aluno;
+import br.sisacademico.model.Curso;
 import br.sisacademico.util.AcaoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,35 +26,51 @@ public class AlunoController extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             AcaoDao act = AcaoDao.valueOf(request.getParameter("acao"));
             AlunoDao aDAO = new AlunoDao();
-            
-            switch(act) {
+            CursoDao cDAO = new CursoDao();
+            HttpSession session = request.getSession();
+
+            switch (act) {
                 case LEITURA:
-                    ArrayList<Aluno> alunos; 
+                    ArrayList<Aluno> alunos;
                     String url = "./relatorios/alunos.jsp";
-                    if(request.getParameter("idCurso") == null) {
-                        alunos =  aDAO.getTodosAluno();
+                    if (request.getParameter("idCurso") == null) {
+                        alunos = aDAO.getTodosAluno();
                     } else {
                         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
                         alunos = aDAO.getTodosAluno(idCurso);
                         url += "?idCurso=" + idCurso;
                     }
-                    
-                    HttpSession session = request.getSession();
+
                     session.setAttribute("listaDeAlunos", alunos);
-                    
+
                     response.sendRedirect(url);
-                    
+
                     break;
                 case EXCLUSAO:
                     int idAluno = Integer.parseInt(request.getParameter("idAluno"));
                     aDAO.deleteAluno(idAluno);
-                    if(request.getParameter("idCurso") != null) {
+                    if (request.getParameter("idCurso") != null) {
                         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
                         response.sendRedirect("./relatorios/loader.jsp?pagina=aluno&idCurso=" + idCurso);
                     } else {
-                       response.sendRedirect("./relatorios/loader.jsp?pagina=aluno"); 
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=aluno");
                     }
-                    
+
+                    break;
+                case CARREGAMENTO:
+                    session.setAttribute("listaCursos", cDAO.getTodosCursos());
+                    response.sendRedirect("./cadastros/aluno.jsp");
+                    break;
+                case CADASTRO:
+                    Aluno a = new Aluno();
+                    a.setRa(Integer.parseInt(request.getParameter("raAluno")));
+                    a.setNomeAluno(request.getParameter("nomeAluno"));
+                    a.setCurso(new Curso(Integer.parseInt(request.getParameter("idCurso")), null, null));
+                    if (aDAO.cadastraAluno(a)) {
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=aluno");
+                    }
+                    break;
+                case EDICAO:
                     break;
                 default:
                     break;

@@ -2,6 +2,8 @@
 <%@page import="br.sisacademico.model.Curso"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    response.setContentType("text/html;charset=UTF-8");
+    request.setCharacterEncoding("UTF-8");
     Map<Curso, Integer> listaDeCursos = (Map) session.getAttribute("listaDeCursos");
 %>
 <!DOCTYPE html>
@@ -50,7 +52,12 @@
                             </td>
                             <% } %>
 
-                            <td class="text-center"><a class="btn btn-outline-primary" href="#">Editar</a></td>
+                            <%
+                                String editParams = String.format("?idCurso=%s&curso=%s&tipo=%s", 
+                                        c.getKey().getIdCurso(), c.getKey().getNomeCurso(), c.getKey().getTipoCurso());
+                            %>
+                            
+                            <td class="text-center"><a class="btn btn-outline-primary" href="../cadastros/curso.jsp<%=editParams%>">Editar</a></td>
 
                             <% if (c.getValue() > 0) { %>
                             <td class="text-center">
