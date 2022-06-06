@@ -25,7 +25,20 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 - **Atividade 5:** De 16.05 até 06.06, 09h - Encerrada
 - **Atividade 6:** De 30.06 até 13.06, 09h - Aberta
 
-**Atividade de recuperação:** Será online no dia 13.06 - Já começe a implementar sozinho(a) um projeto CRUD completo de "Urna Eletrônica"
+## Recuperação
+
+**Quando?** 13.06, em aula
+
+**Como?** Utilize o script fornecido na pasta "Projeto-Recuperação" para implementar a "Urna Eletrônica"
+
+**Detalhes:** (coisas que precisam funcionar no seu projeto)
+
+- Deve existir um sistema de autenticação que pode ser simples
+- Cada usuário poderá votar uma única vez em cada eleição
+- Cada eleição possui N candidatos
+- Deve haver um painel geral para o usuário votar
+- Não é preciso criar privilégios para os usuários (embora desejável).
+- Cada usuário pode criar novas eleições e cadastrar candidatos livremente (neste caso)
 
 ## Critérios de Avaliação
 
