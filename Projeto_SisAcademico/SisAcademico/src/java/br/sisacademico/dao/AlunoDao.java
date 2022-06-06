@@ -95,4 +95,52 @@ public class AlunoDao {
             return false;
         }
     }
+    
+    public boolean atualizaAluno(int idAlunoAtualizado, String nomeNovo, int idCursoNovo) {
+        try {
+            String query = "UPDATE TB_ALUNO"
+                    + " SET NOME = ?, ID_CURSO = ?"
+                    + " WHERE ID = ?";
+            
+            PreparedStatement stm = ConnectionFactory.getConnection()
+                    .prepareStatement(query);
+
+            stm.setString(1, nomeNovo);
+            stm.setInt(2, idCursoNovo);
+            stm.setInt(3, idAlunoAtualizado);
+
+            stm.execute();
+
+            stm.getConnection().close();
+            
+            return true;
+        } catch(Exception ex) {
+            return false;
+        }
+    }
+    
+    
+    //atualização por objeto
+    public boolean atualizaAluno(Aluno aluno) {
+        try {
+            String query = "UPDATE TB_ALUNO"
+                    + " SET NOME = ?, ID_CURSO = ?"
+                    + " WHERE ID = ?";
+            
+            PreparedStatement stm = ConnectionFactory.getConnection()
+                    .prepareStatement(query);
+
+            stm.setString(1, aluno.getNomeAluno());
+            stm.setInt(2, aluno.getCurso().getIdCurso());
+            stm.setInt(3, aluno.getIdAluno());
+
+            stm.execute();
+
+            stm.getConnection().close();
+            
+            return true;
+        } catch(Exception ex) {
+            return false;
+        }
+    }
 }

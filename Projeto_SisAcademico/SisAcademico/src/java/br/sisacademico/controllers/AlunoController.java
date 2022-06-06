@@ -22,12 +22,15 @@ public class AlunoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         try ( PrintWriter out = response.getWriter()) {
             AcaoDao act = AcaoDao.valueOf(request.getParameter("acao"));
             AlunoDao aDAO = new AlunoDao();
             CursoDao cDAO = new CursoDao();
             HttpSession session = request.getSession();
+            Aluno a;
+            int idAluno;
 
             switch (act) {
                 case LEITURA:
@@ -47,7 +50,7 @@ public class AlunoController extends HttpServlet {
 
                     break;
                 case EXCLUSAO:
-                    int idAluno = Integer.parseInt(request.getParameter("idAluno"));
+                    idAluno = Integer.parseInt(request.getParameter("idAluno"));
                     aDAO.deleteAluno(idAluno);
                     if (request.getParameter("idCurso") != null) {
                         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
@@ -59,10 +62,21 @@ public class AlunoController extends HttpServlet {
                     break;
                 case CARREGAMENTO:
                     session.setAttribute("listaCursos", cDAO.getTodosCursos());
-                    response.sendRedirect("./cadastros/aluno.jsp");
+
+                    if (request.getParameter("idAluno") != null) {
+                        String editParams = String.format("?idAluno=%s&nome=%s&ra=%s&idCurso=%s",
+                                request.getParameter("idAluno"),
+                                request.getParameter("nome"),
+                                request.getParameter("ra"),
+                                request.getParameter("idCurso"));
+                        response.sendRedirect("./cadastros/aluno.jsp" + editParams);
+                    } else {
+                        response.sendRedirect("./cadastros/aluno.jsp");
+                    }
+
                     break;
                 case CADASTRO:
-                    Aluno a = new Aluno();
+                    a = new Aluno();
                     a.setRa(Integer.parseInt(request.getParameter("raAluno")));
                     a.setNomeAluno(request.getParameter("nomeAluno"));
                     a.setCurso(new Curso(Integer.parseInt(request.getParameter("idCurso")), null, null));
@@ -71,6 +85,13 @@ public class AlunoController extends HttpServlet {
                     }
                     break;
                 case EDICAO:
+                    a = new Aluno();
+                    a.setIdAluno(Integer.parseInt(request.getParameter("idAluno")));
+                    a.setNomeAluno(request.getParameter("nomeAluno"));
+                    a.setCurso(new Curso(Integer.parseInt(request.getParameter("idCurso")), null, null));
+                    if (aDAO.atualizaAluno(a)) {
+                        response.sendRedirect("./relatorios/loader.jsp?pagina=aluno");
+                    }
                     break;
                 default:
                     break;

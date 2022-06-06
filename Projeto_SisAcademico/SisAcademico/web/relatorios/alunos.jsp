@@ -69,7 +69,15 @@
                             <td><%= a.getNomeAluno()%></td>
                             <td><%= a.getCurso().getNomeCurso()%></td>
                             <td><%= a.getCurso().getTipoCurso()%></td>
-                            <td class="text-center"><a class="btn btn-outline-primary" href="#">Editar</a></td>
+                            
+                            <%
+                                String editParams = String.format("&idAluno=%s&nome=%s&ra=%s&idCurso=%s", 
+                                        a.getIdAluno(), a.getNomeAluno(), a.getRa(), a.getCurso().getIdCurso());
+                            %>
+                            
+                            <td class="text-center"><a class="btn btn-outline-primary" href="<%=request.getContextPath()%>/AlunoController?acao=CARREGAMENTO<%=editParams%>">Editar</a></td>
+
+                            
                             <% if (mostraPainelFiltro) {%>
                             <td class="text-center"><a class="btn btn-outline-danger" id="deleteAluno" 
                                                        href="../AlunoController?acao=EXCLUSAO&idCurso=<%=a.getCurso().getIdCurso()%>&idAluno=<%=a.getIdAluno()%>">Excluir</a></td>

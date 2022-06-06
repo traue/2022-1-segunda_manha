@@ -1,0 +1,15 @@
+//ToDo list do projeto (Desafio do Tio)
+
+Use essa lista de requisitos pendentes para alterar livremente o projeto
+
+1. Sistena de Autenticação com Cookies e Sessoões 
+   (use preferencialmente uma criptografia para senha no banco - MD5)
+
+2. Inclusão das "disciplinas" em cada curso, sendo que 
+    - Cada disciplina tem um nome e uma carga horária
+    - A disciplina pode ser utilizada em mais de um curso ao mesmo tempo
+    - A disciplina precisa de um Professor (cadastro de professores)
+
+... (quaisquer outras alterações que quiser)
+
+:D
