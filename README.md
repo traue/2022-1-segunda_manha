@@ -23,7 +23,7 @@ Conseguir acessar a atividade faz parte do critério de avaliação da disciplin
 - **Atividade 3:** De 18.04 até 16.05, 09h - Encerrada
 - **Atividade 4:** De 02.05 até 23.05, 09h - Encerrada
 - **Atividade 5:** De 16.05 até 06.06, 09h - Encerrada
-- **Atividade 6:** De 30.06 até 13.06, 09h - Aberta
+- **Atividade 6:** De 30.06 até 13.06, 09h - Encerrada
 
 ## Recuperação
 
