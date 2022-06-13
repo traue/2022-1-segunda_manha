@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(255, 196, 220);
+}
+
+.formLogin {
+    margin: 0 auto;
+    width: 20%;
+    margin-top: 120px;
+}
+
+.alertaLogin {
+    margin: 0 auto;
+    width: 20%;
+    margin-top: 120px;
+    border: 2px dotted red;
+    text-align: center;
+}
+
+.signout {
+    text-align: right;
+    display: block;
+}
