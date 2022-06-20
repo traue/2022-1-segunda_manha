@@ -1,4 +1,4 @@
-# Aplicações Orientadas a Objetos
+# Aplicações Orientadas a Objetos - ENCERRADA
 
 Prof. Thiago G. Traue
 
